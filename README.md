@@ -41,9 +41,9 @@ Playwright нь Chromium, Firefox болон WebKit browser-уудыг нэг fr
 
 Trace evidence:
 
-`docs/trace.zip`
+[Trace файлыг харах](docs/trace.zip)
 
-Trace Viewer ашиглан тестийн алхмууд болон assertion-ийн ажиллагааг шалгасан.
+Trace Viewer ашиглан тестийн алхмууд болон assertion-ийн ажиллагааг шалгасан. Тестийн assertion-ийг зориудаар буруу болгож failure үүсгэн, Trace Viewer ашиглан алдаа гарсан алхмыг мөшгөж шалгасан. Дараа нь assertion-ийг засаж, бүх тестийг амжилттай ажиллуулсан.
 
 ## Run tests
 
