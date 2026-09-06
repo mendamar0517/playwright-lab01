@@ -26,3 +26,24 @@ test("Буруу нууц үгээр нэвтрэх", async ({ page }) => {
     ),
   ).toBeVisible();
 });
+
+test("Бараа сагсанд нэмэх", async ({ page }) => {
+  await page.goto("https://www.saucedemo.com/");
+
+  await page.getByPlaceholder("Username").fill("standard_user");
+  await page.getByPlaceholder("Password").fill("secret_sauce");
+  await page.getByRole("button", { name: "Login" }).click();
+
+  await expect(page.getByText("Products")).toBeVisible();
+
+  await page.getByRole("button", { name: "Add to cart" }).first().click();
+
+  await expect(page.locator('[data-test="shopping-cart-badge"]')).toHaveText(
+    "1",
+  );
+
+  await page.locator('[data-test="shopping-cart-link"]').click();
+
+  await page.getByRole("button", { name: "Open Menu" }).click();
+  await page.getByText("Logout").click();
+});
